@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: black;
+  color: white;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
