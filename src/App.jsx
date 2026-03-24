@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar/Navbar";
-import { Footer } from "./components/Footer/Footer";
+import { FooterAdvanced } from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 
@@ -10,7 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-      <Footer />
+      <FooterAdvanced />
     </div>
   );
 }
