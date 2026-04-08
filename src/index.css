@@ -1,0 +1,39 @@
+/* Global reset and full-page layout */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  color: #fff;
+  font-family: "Playfair Display", serif;
+}
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+}
+
+p,
+li,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

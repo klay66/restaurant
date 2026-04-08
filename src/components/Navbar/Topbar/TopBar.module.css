@@ -1,0 +1,42 @@
+.topbar {
+  background: #2c2c2c;
+  color: white;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.left {
+  display: flex;
+  gap: 20px;
+}
+
+.left span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.right {
+  display: flex;
+  gap: 15px;
+}
+
+.right svg {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.right svg:hover {
+  color: #c0392b;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .left {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
