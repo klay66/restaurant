@@ -1,13 +1,137 @@
 .navbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 15px;
-  background: black;
+  padding: 15px 30px;
+  background: #ffffff;
+  color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #111;
+  text-decoration: none;
+}
+
+/* Links */
+.links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links li {
+  cursor: pointer;
+  position: relative;
+}
+
+.links li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links li:hover a {
+  color: #c0392b;
+}
+
+/* Hover underline animation */
+.links li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #c0392b;
+  transition: 0.3s;
+}
+
+.links li:hover::after {
+  width: 100%;
+}
+
+/* Button */
+.btn {
+  padding: 8px 18px;
+  border: 1px solid #c0392b;
+  background: transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #c0392b;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #c0392b;
   color: white;
 }
 
-.navbar ul {
-  display: flex;
-  gap: 15px;
-  list-style: none;
+/* Mobile */
+.menuIcon {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 200px;
+  background: #111;
+  color: #f7f7f7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.mobileMenu li {
+  color: #d8d8d8;
+}
+
+.mobileMenu p {
+  padding: 15px;
+  margin: 0;
+}
+
+.mobileMenu p a {
+  color: #d8d8d8;
+  text-decoration: none;
+}
+.mobileMenu p:hover {
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  .menuIcon {
+    display: block;
+  }
 }
