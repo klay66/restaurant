@@ -1,0 +1,97 @@
+.testimonials {
+  padding: 100px 20px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 56px;
+  color: #2d2d2d;
+  margin: 0 0 60px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background-color: #f9f9f7;
+  border-radius: 14px;
+  padding: 30px 24px;
+}
+
+.card h3 {
+  font-size: 28px;
+  color: #f97316;
+  margin: 0 0 20px;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0 0 30px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user h4 {
+  font-size: 16px;
+  margin: 0 0 6px;
+  color: #2d2d2d;
+}
+
+.user span {
+  font-size: 14px;
+  color: #666;
+}
+@media (max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .container h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonials {
+    padding: 70px 15px;
+  }
+
+  .container h2 {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+
+  .card h3 {
+    font-size: 22px;
+  }
+
+  .card p {
+    font-size: 15px;
+  }
+}
