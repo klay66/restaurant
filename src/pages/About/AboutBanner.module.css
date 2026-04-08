@@ -1,0 +1,44 @@
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://framerusercontent.com/images/k6sB5mk7wZySzFc9PUoPc1doVs.png?scale-down-to=2048&width=3200&height=1380");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.content {
+  max-width: 800px;
+}
+
+.content h1 {
+  color: white;
+  font-size: 64px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 80vh;
+  }
+
+  .content h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+}
