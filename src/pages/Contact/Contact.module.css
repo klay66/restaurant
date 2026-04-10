@@ -1,0 +1,159 @@
+.contact {
+  background: linear-gradient(to bottom, #f9f9f7 50%, #ffffff 50%);
+  padding: 80px 20px 100px;
+}
+
+.top {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.top h1 {
+  font-size: 60px;
+  color: #2d2d2d;
+  margin: 0 0 15px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.top p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #666;
+}
+
+.formCard {
+  max-width: 760px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 35px 30px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+.form {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-size: 15px;
+  outline: none;
+  background-color: white;
+}
+
+.inputGroup textarea {
+  border-radius: 22px;
+  resize: none;
+}
+
+.button {
+  width: 100%;
+  border: none;
+  background-color: #f97316;
+  color: white;
+  padding: 16px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #ea580c;
+}
+
+.info {
+  max-width: 760px;
+  margin: 35px auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.info h3 {
+  font-size: 18px;
+  margin: 0 0 15px;
+  color: #2d2d2d;
+}
+
+.info p {
+  font-size: 15px;
+  color: #666;
+  margin: 0 0 6px;
+  line-height: 1.7;
+}
+
+.highlight {
+  color: #f97316 !important;
+  font-size: 28px !important;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .top h1 {
+    font-size: 42px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .info {
+    flex-direction: column;
+  }
+
+  .highlight {
+    font-size: 22px !important;
+  }
+
+  .formCard {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top h1 {
+    font-size: 32px;
+  }
+
+  .top p {
+    font-size: 14px;
+  }
+
+  .inputGroup input,
+  .inputGroup textarea {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .button {
+    padding: 14px;
+  }
+}
