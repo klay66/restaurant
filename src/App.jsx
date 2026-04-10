@@ -5,7 +5,7 @@ import FooterAdvanced from "./components/layout/Footer/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Menu from "./pages/Menu";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact/Contact";
 
 import { Route, Routes } from "react-router-dom";
 
