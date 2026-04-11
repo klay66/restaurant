@@ -32,6 +32,7 @@ export default function Navbar() {
                             className={({ isActive }) =>
                                 isActive ? styles.activeLink : undefined
                             }
+                            end={link.path === "/" ? true : false}
                         >
                             {link.name}
                         </NavLink>
@@ -53,8 +54,9 @@ export default function Navbar() {
                         <NavLink
                             to={link.path}
                             className={({ isActive }) =>
-                                isActive ? styles.activeMobileLink : undefined
+                                isActive ? `${styles.mobileLink} ${styles.activeMobileLink}` : styles.mobileLink
                             }
+                            end={link.path === "/" ? true : false}
                             onClick={() => setMenuOpen(false)}
                         >
                             {link.name}

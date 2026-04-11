@@ -29,7 +29,7 @@ export const blogPosts = [
             </ul>
         `,
         date: new Date(2023, 0, 3),
-        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=600&fit=crop&auto=format",
         category: "Recipes",
         featured: true,
         author: "Chef Michael",
@@ -63,7 +63,7 @@ export const blogPosts = [
             </ul>
         `,
         date: new Date(2023, 0, 3),
-        img: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5",
+        img: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=800&h=600&fit=crop&auto=format",
         category: "Tips",
         author: "Chef Sarah",
         readTime: "5 min read",
@@ -97,7 +97,7 @@ export const blogPosts = [
             </ul>
         `,
         date: new Date(2023, 0, 3),
-        img: "https://images.unsplash.com/photo-1606755962773-0d0b8a7c0b9d",
+        img: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&h=600&fit=crop&auto=format",
         category: "Recipes",
         author: "Chef James",
         readTime: "6 min read",
@@ -140,7 +140,7 @@ export const blogPosts = [
             </ul>
         `,
         date: new Date(2023, 0, 10),
-        img: "https://images.unsplash.com/photo-1551024601-bec78aea704b",
+        img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800&h=600&fit=crop&auto=format",
         category: "Desserts",
         author: "Chef Emma",
         readTime: "10 min read",
@@ -178,7 +178,7 @@ export const blogPosts = [
             </ul>
         `,
         date: new Date(2023, 0, 15),
-        img: "https://images.unsplash.com/photo-1594007654729-407eedc4be65",
+        img: "https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=800&h=600&fit=crop&auto=format",
         category: "Reviews",
         author: "Food Critic David",
         readTime: "7 min read",

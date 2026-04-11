@@ -11,7 +11,6 @@ export default function FooterAdvanced() {
         "Blog",
         "Book A Table",
         "Contact",
-        "Delivery"
     ];
 
     const utilityPages = [
@@ -21,7 +20,6 @@ export default function FooterAdvanced() {
         "404 Not Found",
         "Licenses",
         "Changelog",
-        "View More"
     ];
 
     const images = [

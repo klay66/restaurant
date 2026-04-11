@@ -1,5 +1,5 @@
 import styles from "./AboutSection.module.css";
-import foodImg from "../../assets/food.png";
+import foodImg from "../../assets/optimized/food.webp";
 
 export default function AboutSection() {
     return (
@@ -8,7 +8,7 @@ export default function AboutSection() {
 
                 {/* Image */}
                 <div className={styles.imageWrapper}>
-                    <img src={foodImg} alt="food" />
+                    <img src={foodImg} alt="food" loading="lazy" />
 
                     <div className={styles.card}>
                         <h4>Come and visit us</h4>
