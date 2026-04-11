@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../../context/useCart";
 import styles from "./Navbar.module.css";
 import { FaBars, FaTimes } from "react-icons/fa";
+import logoDark from "../../assets/logo-dark.svg";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,9 @@ export default function Navbar() {
 
     return (
         <nav className={styles.navbar}>
-            <Link to="/" className={styles.logo}>Bistro Bliss</Link>
+
+            {/* Logo */}
+            <Link to="/" className={styles.logo}><img src={logoDark} alt="Logo" /></Link>
 
             <ul className={styles.links}>
                 {links.map((link, i) => (

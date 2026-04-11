@@ -1,8 +1,9 @@
 import footerStyles from "./Footer.module.css";
 import { FaFacebookF, FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
+import logo from "../../../assets/logo.svg";
 
 
-export function FooterAdvanced() {
+export default function FooterAdvanced() {
     const pages = [
         "Home",
         "About",
@@ -35,7 +36,7 @@ export function FooterAdvanced() {
             <div className={footerStyles.container}>
                 {/* Left Section */}
                 <div className={footerStyles.left}>
-                    <h2>Bistro Bliss</h2>
+                    <img src={logo} alt="Logo" />
                     <p>
                         In the new era of technology we look a in the future with certainty and pride to
                         for our company and.
@@ -93,3 +94,4 @@ export function FooterAdvanced() {
     )
 
 }
+
