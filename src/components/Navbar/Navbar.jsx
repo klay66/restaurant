@@ -1,48 +1,71 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useCart } from "../../context/useCart";
 import styles from "./Navbar.module.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logoDark from "../../assets/logo-dark.svg";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { cartCount } = useCart();
 
     const links = [
         { name: "Home", path: "/" },
-        { name: "Menu", path: "/menu" },
         { name: "About", path: "/about" },
+        { name: "Menu", path: "/menu" },
+        { name: "Blog", path: "/blog" },
+        { name: "Book A Table", path: "/booking" },
         { name: "Contact", path: "/contact" },
     ];
 
     return (
         <nav className={styles.navbar}>
+
             {/* Logo */}
             <Link to="/" className={styles.logo}><img src={logoDark} alt="Logo" /></Link>
 
-            {/* Desktop Links */}
             <ul className={styles.links}>
                 {links.map((link, i) => (
                     <li key={i}>
-                        <Link to={link.path}>{link.name}</Link>
+                        <NavLink
+                            to={link.path}
+                            className={({ isActive }) =>
+                                isActive ? styles.activeLink : undefined
+                            }
+                        >
+                            {link.name}
+                        </NavLink>
                     </li>
                 ))}
             </ul>
 
-            {/* Button */}
-            <button className={styles.btn}>Book a Table</button>
+            <Link to="/cart" className={styles.btn}>
+                My Order{cartCount > 0 ? ` (${cartCount})` : ""}
+            </Link>
 
-            {/* Mobile Icon */}
             <div className={styles.menuIcon} onClick={() => setMenuOpen(!menuOpen)}>
                 {menuOpen ? <FaTimes /> : <FaBars />}
             </div>
 
-            {/* Mobile Menu */}
             <div className={`${styles.mobileMenu} ${menuOpen ? styles.show : ""}`}>
                 {links.map((link, i) => (
                     <p key={i}>
-                        <Link to={link.path} onClick={() => setMenuOpen(false)}>{link.name}</Link>
+                        <NavLink
+                            to={link.path}
+                            className={({ isActive }) =>
+                                isActive ? styles.activeMobileLink : undefined
+                            }
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            {link.name}
+                        </NavLink>
                     </p>
                 ))}
+                <p>
+                    <Link to="/cart" className={styles.mobileOrder} onClick={() => setMenuOpen(false)}>
+                        My Order{cartCount > 0 ? ` (${cartCount})` : ""}
+                    </Link>
+                </p>
             </div>
         </nav>
     );

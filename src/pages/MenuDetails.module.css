@@ -1,0 +1,171 @@
+.detailsPage {
+  padding: 80px 20px;
+  background: #fffaf5;
+}
+
+.breadcrumbs {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.breadcrumbs a {
+  color: #c0392b;
+  text-decoration: none;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.imageWrapper {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.category {
+  color: #c0392b;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.info h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  color: #222;
+}
+
+.info p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.actionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.quantityControl {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.quantityControl button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #333;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.quantityControl span {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.priceWrapper {
+  text-align: right;
+}
+
+.price {
+  display: block;
+  font-size: 2rem;
+  color: #c0392b;
+  font-weight: 700;
+}
+
+.subtotal {
+  display: block;
+  color: #666;
+  margin-top: 6px;
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary {
+  background: #c0392b;
+  color: white;
+}
+
+.secondary {
+  background: transparent;
+  color: #c0392b;
+  border: 1px solid #c0392b;
+}
+
+.primary:hover,
+.secondary:hover {
+  opacity: 0.93;
+}
+
+@media (max-width: 992px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .priceWrapper {
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .detailsPage {
+    padding: 60px 16px;
+  }
+
+  .info h1 {
+    font-size: 2rem;
+  }
+
+  .actionRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

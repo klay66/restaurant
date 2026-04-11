@@ -1,0 +1,68 @@
+const menuItems = [
+    {
+        id: "seafood-1",
+        title: "Grilled Salmon Steak",
+        category: "Seafood",
+        price: 24,
+        description: "Perfectly grilled salmon served with herb butter, lemon, and seasonal greens.",
+        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+        id: "seafood-2",
+        title: "Spicy Shrimp Pasta",
+        category: "Seafood",
+        price: 22,
+        description: "Light pasta with chili shrimp, garlic, cherry tomatoes and parmesan.",
+        image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+        id: "meat-1",
+        title: "Grilled Ribeye Steak",
+        category: "Meat",
+        price: 32,
+        description: "Juicy ribeye steak cooked to your preference, served with rosemary fries.",
+        image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+        id: "meat-2",
+        title: "Lamb Chops with Date Glaze",
+        category: "Meat",
+        price: 29,
+        description: "Caramelized lamb chops with a sweet date and spice reduction.",
+        image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+        id: "oriental-1",
+        title: "Oriental Chicken Shawarma",
+        category: "Oriental",
+        price: 18,
+        description: "Tender shawarma chicken, pickles, tahini sauce and warm flatbread.",
+        image: "https://images.unsplash.com/photo-1604908177543-ea76df8daef1?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+        id: "oriental-2",
+        title: "Mixed Kebab Platter",
+        category: "Oriental",
+        price: 26,
+        description: "Grilled chicken, beef and lamb kebabs served with rice and salad.",
+        image: "https://images.unsplash.com/photo-1512058564366-c9e2d0f6cc81?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+        id: "dessert-1",
+        title: "Classic Cheesecake",
+        category: "All",
+        price: 12,
+        description: "Creamy cheesecake with berry compote and toasted almonds.",
+        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+        id: "dessert-2",
+        title: "Chocolate Lava Cake",
+        category: "All",
+        price: 14,
+        description: "Warm molten chocolate cake topped with vanilla ice cream.",
+        image: "https://images.unsplash.com/photo-1542827637-ef70ae67d4c1?auto=format&fit=crop&w=900&q=80",
+    },
+];
+
+export default menuItems;

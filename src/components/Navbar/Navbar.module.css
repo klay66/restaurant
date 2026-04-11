@@ -62,18 +62,34 @@
 
 /* Button */
 .btn {
-  padding: 8px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
   border: 1px solid #c0392b;
-  background: transparent;
-  border-radius: 20px;
-  cursor: pointer;
-  color: #c0392b;
-  transition: 0.3s;
+  background: #c0392b;
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
 .btn:hover {
-  background: #c0392b;
-  color: white;
+  background: #a83227;
+  transform: translateY(-1px);
+}
+
+.activeLink {
+  color: #c0392b;
+}
+
+.activeMobileLink,
+.mobileOrder {
+  color: #fff;
+  font-weight: 700;
 }
 
 /* Mobile */

@@ -1,17 +1,18 @@
-import AboutIntro from "./AboutIntro";
+import React from "react";
+import AboutSection from "../../components/About/AboutSection";
 import AboutBanner from "./AboutBanner";
 import AboutFeatures from "./AboutFeatures";
 import AboutInfo from "./AboutInfo";
-import AboutTestimonials from "./AboutTestimonials";
+import Testimonials from "../../components/Testimonials/Testimonials";
 
 export default function About() {
   return (
-    <>
-      <AboutIntro />
+    <React.Fragment>
+      <AboutSection />
       <AboutBanner />
       <AboutFeatures />
       <AboutInfo />
-      <AboutTestimonials />
-    </>
+      <Testimonials />
+    </React.Fragment>
   );
 }

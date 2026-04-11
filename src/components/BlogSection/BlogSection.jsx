@@ -1,64 +1,100 @@
+import { useNavigate } from "react-router-dom";
+import { blogPosts } from "../../data/blogPosts";
 import styles from "./BlogSection.module.css";
 
 export default function BlogSection() {
-    const posts = [
-        {
-            title: "The secret tips & tricks to prepare a perfect burger & pizza",
-            date: "January 3, 2023",
-            img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
-            big: true,
-        },
-        {
-            title: "How to prepare the perfect french fries in an air fryer",
-            date: "January 3, 2023",
-            img: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5",
-        },
-        {
-            title: "How to prepare delicious chicken tenders",
-            date: "January 3, 2023",
-            img: "https://images.unsplash.com/photo-1606755962773-0d0b8a7c0b9d",
-        },
-        {
-            title: "7 delicious cheesecake recipes you can prepare",
-            date: "January 3, 2023",
-            img: "https://images.unsplash.com/photo-1551024601-bec78aea704b",
-        },
-        {
-            title: "5 great pizza restaurants you should visit this city",
-            date: "January 3, 2023",
-            img: "https://images.unsplash.com/photo-1594007654729-407eedc4be65",
-        },
-    ];
+    const navigate = useNavigate();
+    const [featured, ...otherPosts] = blogPosts;
 
-    const [featured, ...otherPosts] = posts;
+    const formatDate = (date) => {
+        return new Intl.DateTimeFormat("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        }).format(date);
+    };
 
     return (
-        <section className={styles.blog}>
+        <section className={styles.blog} aria-label="Blog and Articles">
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <h2>Our Blog & Articles</h2>
-                    <button>Read All Articles</button>
+                    <div>
+                        <h2>Our Blog & Articles</h2>
+                        <p className={styles.subtitle}>Discover culinary tips, recipes, and restaurant insights</p>
+                    </div>
+                    <button
+                        className={styles.ctaButton}
+                        aria-label="View all blog articles"
+                        onClick={() => navigate("/blog")}
+                    >
+                        Read All Articles
+                    </button>
                 </div>
 
                 <div className={styles.grid}>
-                    <div className={`${styles.card} ${styles.featured}`}>
-                        <img src={featured.img} alt="blog" />
+                    <article
+                        className={`${styles.card} ${styles.featured}`}
+                        onClick={() => navigate(`/blog/${featured.id}`)}
+                        style={{ cursor: "pointer" }}
+                    >
+                        <div className={styles.imageWrapper}>
+                            <img
+                                src={featured.img}
+                                alt={featured.title}
+                                loading="lazy"
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.overlay} />
+                            <span className={styles.categoryBadge} aria-label={`Category: ${featured.category}`}>
+                                {featured.category}
+                            </span>
+                        </div>
 
                         <div className={styles.content}>
-                            <span>{featured.date}</span>
+                            <time className={styles.date} dateTime={featured.date.toISOString()}>
+                                {formatDate(featured.date)}
+                            </time>
                             <h3>{featured.title}</h3>
+                            <p className={styles.excerpt}>{featured.excerpt}</p>
+                            <button className={styles.readMore}>
+                                Read Article
+                                <span>→</span>
+                            </button>
                         </div>
-                    </div>
+                    </article>
 
-                    {otherPosts.map((post, i) => (
-                        <div key={i} className={styles.card}>
-                            <img src={post.img} alt="blog" />
+                    {otherPosts.map((post) => (
+                        <article
+                            key={post.id}
+                            className={styles.card}
+                            onClick={() => navigate(`/blog/${post.id}`)}
+                            style={{ cursor: "pointer" }}
+                        >
+                            <div className={styles.imageWrapper}>
+                                <img
+                                    src={post.img}
+                                    alt={post.title}
+                                    loading="lazy"
+                                    className={styles.cardImage}
+                                />
+                                <div className={styles.overlay} />
+                                <span className={styles.categoryBadge} aria-label={`Category: ${post.category}`}>
+                                    {post.category}
+                                </span>
+                            </div>
 
                             <div className={styles.content}>
-                                <span>{post.date}</span>
+                                <time className={styles.date} dateTime={post.date.toISOString()}>
+                                    {formatDate(post.date)}
+                                </time>
                                 <h3>{post.title}</h3>
+                                <p className={styles.excerpt}>{post.excerpt}</p>
+                                <button className={styles.readMore}>
+                                    Read Article
+                                    <span>→</span>
+                                </button>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>
