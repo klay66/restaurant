@@ -19,21 +19,21 @@
 }
 
 .icon {
-  font-size: 42px;
+  font-size: 35px;
   color: #5a6b2d;
   flex-shrink: 0;
   line-height: 1;
 }
 
 .item h3 {
-  font-size: 32px;
+  font-size: 25px;
   margin: 0 0 15px;
   color: #2d2d2d;
   font-weight: 700;
 }
 
 .item p {
-  font-size: 25px;
+  font-size: 16px;
   line-height: 1.7;
   color: #555;
   margin: 0;

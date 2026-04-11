@@ -1,22 +1,26 @@
 import styles from "./ServicesSection.module.css";
+import fod from "../../assets/food.png";
+import fod2 from "../../assets/fod2.avif";
+import fod3 from "../../assets/fod3.avif";
+import fod4 from "../../assets/fod4.avif";
 
 export default function ServicesSection() {
     const services = [
         {
             title: "Caterings",
-            img: "https://images.unsplash.com/photo-1543353071-873f17a7a088",
+            img: fod,
         },
         {
             title: "Birthdays",
-            img: "https://images.unsplash.com/photo-1519741497674-611481863552",
+            img: fod2,
         },
         {
             title: "Weddings",
-            img: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486",
+            img: fod3,
         },
         {
             title: "Events",
-            img: "https://images.unsplash.com/photo-1505236858219-8359eb29e329",
+            img: fod4,
         },
     ];
 

@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./Hero.module.css";
 import heroImg from "../../assets/hero.png";
 
 export default function Hero() {
+    const navigate = useNavigate();
+
     return (
         <section className={styles.hero}
             style={{ backgroundImage: `url(${heroImg})` }}>
@@ -15,8 +18,8 @@ export default function Hero() {
                 </p>
 
                 <div className={styles.buttons}>
-                    <button className={styles.primary}>Book A Table</button>
-                    <button className={styles.secondary}>Explore Menu</button>
+                    <button className={styles.primary} onClick={() => navigate("/booking")}>Book A Table</button>
+                    <button className={styles.secondary} onClick={() => navigate("/menu")}>Explore Menu</button>
                 </div>
             </div>
         </section>

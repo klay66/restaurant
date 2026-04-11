@@ -7,8 +7,8 @@ export function FooterAdvanced() {
         "Home",
         "About",
         "Menu",
-        "Pricing",
         "Blog",
+        "Book A Table",
         "Contact",
         "Delivery"
     ];

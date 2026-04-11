@@ -14,7 +14,6 @@ export default function Home() {
             <Hero />
             <MenuSection />
             <AboutSection />
-            <Testimonials />
             <ServicesSection />
             <DeliverySection />
             <Testimonials />
