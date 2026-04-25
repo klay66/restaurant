@@ -106,46 +106,80 @@
 /* Mobile */
 .menuIcon {
   display: none;
-  font-size: 22px;
+  font-size: 26px;
   cursor: pointer;
+  z-index: 1001;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menuIcon.open {
+  color: #ffffff;
 }
 
 .mobileMenu {
-  position: absolute;
-  top: 70px;
-  right: 0;
-  width: 200px;
-  background: #111;
-  color: #f7f7f7;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transform: translateY(-20px);
-  opacity: 0;
-  transition: 0.3s;
-  pointer-events: none;
-}
-
-.mobileMenu li {
-  color: #d8d8d8;
-}
-
-.mobileMenu p {
-  padding: 15px;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(17, 17, 17, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1000;
   margin: 0;
 }
 
-.mobileMenu p a {
-  color: #d8d8d8;
-  text-decoration: none;
+.mobileMenu p {
+  margin: 15px 0;
 }
-.mobileMenu p:hover {
-  border-bottom: 1px solid #eee;
-  cursor: pointer;
+
+.mobileMenu p a {
+  font-size: 24px;
+  font-weight: 600;
+  color: #888;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  display: block;
+}
+
+.mobileMenu p a:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.mobileMenu p a.activeMobileLink {
+  color: #c0392b;
+}
+
+.mobileMenu .mobileOrder {
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 12px 35px;
+  background: #c0392b;
+  color: #ffffff !important;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.mobileMenu .mobileOrder:hover {
+  background: #a83227;
+  transform: scale(1.05);
 }
 
 .show {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
+  right: 0;
 }
 
 /* Responsive */
@@ -161,4 +195,20 @@
   .menuIcon {
     display: block;
   }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff4d4d;
+  color: #111;
+  border-radius: 10px;
+  padding: 2px 6px;
+  height: 18px;
+  min-width: 18px;
+  font-size: 11px;
+  font-weight: 800;
+  margin-left: 6px;
+  vertical-align: middle;
 }

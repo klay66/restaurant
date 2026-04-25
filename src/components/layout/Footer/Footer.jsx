@@ -1,95 +1,124 @@
 import footerStyles from "./Footer.module.css";
-import { FaFacebookF, FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
 import logo from "../../../assets/logo.svg";
 
 
 export default function FooterAdvanced() {
-    const pages = [
-        "Home",
-        "About",
-        "Menu",
-        "Blog",
-        "Book A Table",
-        "Contact",
+    const mainLinks = [
+        { label: "Home", href: "/" },
+        { label: "About Us", href: "/about" },
+        { label: "Menu", href: "/menu" },
+        { label: "Blog", href: "/blog" },
+        { label: "Contact", href: "/contact" },
     ];
 
-    const utilityPages = [
-        "Start Here",
-        "Styleguide",
-        "Password Protected",
-        "404 Not Found",
-        "Licenses",
-        "Changelog",
+    const quickLinks = [
+        { label: "Book A Table", href: "/booking" },
+        { label: "Privacy Policy", href: "#" },
+        { label: "Terms & Conditions", href: "#" },
+        { label: "FAQs", href: "#" },
     ];
 
-    const images = [
-        "https://images.unsplash.com/photo-1546069901-ba9599a7e63c",
-        "https://images.unsplash.com/photo-1544025162-d76694265947",
-        "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd"
+    const socials = [
+        { icon: FaFacebookF, label: "Facebook", href: "#" },
+        { icon: FaInstagram, label: "Instagram", href: "#" },
+        { icon: FaTwitter, label: "Twitter", href: "#" },
+        { icon: FaLinkedinIn, label: "LinkedIn", href: "#" },
     ];
 
     return (
         <footer className={footerStyles.footer}>
+            {/* Main Footer Content */}
             <div className={footerStyles.container}>
-                {/* Left Section */}
-                <div className={footerStyles.left}>
-                    <img src={logo} alt="Logo" />
-                    <p>
-                        In the new era of technology we look a in the future with certainty and pride to
-                        for our company and.
-                    </p>
-                    <div className={footerStyles.socials}>
-                        <div className={footerStyles.socialIcon}>
-                            <FaFacebookF />
-                        </div>
-                        <div className={footerStyles.socialIcon}>
-                            <FaTwitter />
-                        </div>
-                        <div className={footerStyles.socialIcon}>
-                            <FaInstagram />
-                        </div>
-                        <div className={footerStyles.socialIcon}>
-                            <FaGithub />
+                {/* Brand Section */}
+                <div className={footerStyles.section}>
+                    <div className={footerStyles.brandBox}>
+                        <img src={logo} alt="Logo" className={footerStyles.logo} />
+                        <p className={footerStyles.brandDesc}>
+                            Discover the finest culinary experience with fresh ingredients and authentic flavors.
+                        </p>
+                        <div className={footerStyles.socials}>
+                            {socials.map((social, idx) => (
+                                <a
+                                    key={idx}
+                                    href={social.href}
+                                    className={footerStyles.socialLink}
+                                    title={social.label}
+                                    aria-label={social.label}
+                                >
+                                    <social.icon />
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>
-                {/* Pages */}
-                <div>
-                    <h3>Pages</h3>
-                    <ul>
-                        {pages.map((item, i) => (
-                            <li key={i}>{item}</li>
+
+                {/* Navigation Links */}
+                <div className={footerStyles.section}>
+                    <h4 className={footerStyles.sectionTitle}>Quick Links</h4>
+                    <ul className={footerStyles.linkList}>
+                        {mainLinks.map((link, idx) => (
+                            <li key={idx}>
+                                <a href={link.href} className={footerStyles.link}>{link.label}</a>
+                            </li>
                         ))}
                     </ul>
                 </div>
 
-                {/* Utility */}
-                <div>
-                    <h3>Utility Pages</h3>
-                    <ul>
-                        {utilityPages.map((item, i) => (
-                            <li key={i}>{item}</li>
+                {/* Support Links */}
+                <div className={footerStyles.section}>
+                    <h4 className={footerStyles.sectionTitle}>Support</h4>
+                    <ul className={footerStyles.linkList}>
+                        {quickLinks.map((link, idx) => (
+                            <li key={idx}>
+                                <a href={link.href} className={footerStyles.link}>{link.label}</a>
+                            </li>
                         ))}
                     </ul>
                 </div>
 
-                {/* Images */}
-                <div>
-                    <h3>Follow Us On Instagram</h3>
-                    <div className={footerStyles.grid}>
-                        {images.map((img, i) => (
-                            <img key={i} src={img} alt="food" />
-                        ))}
+                {/* Contact & Info */}
+                <div className={footerStyles.section}>
+                    <h4 className={footerStyles.sectionTitle}>Contact Us</h4>
+                    <div className={footerStyles.contactInfo}>
+                        <div className={footerStyles.infoItem}>
+                            <FiMapPin className={footerStyles.icon} />
+                            <span>123 Restaurant Street, Cairo, Egypt</span>
+                        </div>
+                        <div className={footerStyles.infoItem}>
+                            <FiPhone className={footerStyles.icon} />
+                            <a href="tel:+201234567890">+20 123 456 7890</a>
+                        </div>
+                        <div className={footerStyles.infoItem}>
+                            <FiMail className={footerStyles.icon} />
+                            <a href="mailto:info@restaurant.com">info@restaurant.com</a>
+                        </div>
+                        <div className={footerStyles.infoItem}>
+                            <FiClock className={footerStyles.icon} />
+                            <span>10 AM - 11 PM Daily</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <p className={footerStyles.copy}>
-                Copyright © 2026 Flame & Grill. All Rights Reserved
-            </p>
-        </footer>
-    )
+            {/* Footer Divider */}
+            <div className={footerStyles.divider}></div>
 
+            {/* Bottom Footer */}
+            <div className={footerStyles.bottomFooter}>
+                <p className={footerStyles.copyright}>
+                    © 2026 <span>Flame & Grill</span>. Development by Nour Ali.
+                </p>
+                <div className={footerStyles.footerLinks}>
+                    <a href="#" className={footerStyles.footerLink}>Privacy</a>
+                    <span className={footerStyles.separator}>•</span>
+                    <a href="#" className={footerStyles.footerLink}>Terms</a>
+                    <span className={footerStyles.separator}>•</span>
+                    <a href="#" className={footerStyles.footerLink}>Sitemap</a>
+                </div>
+            </div>
+        </footer>
+    );
 }
 

@@ -1,15 +1,32 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/useCart";
+import OrderConfirmation from "../components/OrderConfirmation/OrderConfirmation";
 import styles from "./Cart.module.css";
+import { BiColor } from "react-icons/bi";
 
 export default function CartPage() {
-    const { cartItems, updateQuantity, removeFromCart, clearCart, cartSubtotal } = useCart();
+    const { cartItems, updateQuantity, removeFromCart, cartSubtotal, showNotification } = useCart();
+    const [showOrderConfirmation, setShowOrderConfirmation] = useState(false);
 
     const hasItems = cartItems.length > 0;
 
     const tax = useMemo(() => cartSubtotal * 0.08, [cartSubtotal]);
     const total = useMemo(() => cartSubtotal + tax, [cartSubtotal, tax]);
+
+    const handleConfirmOrder = (orderData) => {
+        // Here you would typically send the order to your backend
+        console.log('Order confirmed:', orderData);
+
+        // Show success notification
+        showNotification('تم تأكيد طلبك بنجاح! سيتم التواصل معك قريباً.', 'success');
+
+        // You can also store the order in localStorage for demo purposes
+        const orders = JSON.parse(localStorage.getItem('restaurant-orders') || '[]');
+        orders.push(orderData);
+        localStorage.setItem('restaurant-orders', JSON.stringify(orders));
+        window.dispatchEvent(new Event('ordersUpdated'));
+    };
 
     return (
         <section className={styles.cartPage}>
@@ -53,7 +70,7 @@ export default function CartPage() {
                                             >
                                                 -
                                             </button>
-                                            <span>{item.quantity}</span>
+                                            <span style={{ color: '#c0392b' }}>{item.quantity}</span>
                                             <button
                                                 type="button"
                                                 onClick={() => updateQuantity(item.id, item.quantity + 1)}
@@ -88,16 +105,19 @@ export default function CartPage() {
                             </div>
                             <button
                                 className={styles.primaryButton}
-                                onClick={() => {
-                                    clearCart();
-                                    window.alert("Your order is confirmed. Thank you!");
-                                }}
+                                onClick={() => setShowOrderConfirmation(true)}
                             >
                                 Confirm Order
                             </button>
                         </aside>
                     </div>
                 )}
+
+                <OrderConfirmation
+                    isOpen={showOrderConfirmation}
+                    onClose={() => setShowOrderConfirmation(false)}
+                    onConfirm={handleConfirmOrder}
+                />
             </div>
         </section>
     );
