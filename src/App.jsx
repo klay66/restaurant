@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar/Navbar";
-import Topbar from "./components/Navbar/Topbar/Topbar";
+import TopBar from "./components/Navbar/Topbar/TopBar";
 import FooterAdvanced from "./components/layout/Footer/Footer";
 import Notification from "./components/Notification/Notification";
 
@@ -25,7 +25,7 @@ import OrdersPage from "./pages/Orders/Orders";
 export default function App() {
   return (
     <CartProvider>
-      <Topbar />
+      <TopBar />
       <Navbar />
       <Notification />
 
